@@ -31,7 +31,7 @@ namespace WebApp.Pages.Compra
             {
                 if (id.HasValue)
                 {
-                    Entity = await service.CompraGetById( id.Value );
+                    Entity = await service.CompraGetById(id.Value);
                 }
                 ClienteLista = await service.ClienteGetLista();
                 ProductoLista = await service.ProductoGetLista();

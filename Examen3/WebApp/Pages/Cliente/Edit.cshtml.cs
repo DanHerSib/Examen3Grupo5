@@ -29,7 +29,7 @@ namespace WebApp.Pages.Cliente
             {
                 if (id.HasValue)
                 {
-                    Entity = await service.ClienteGetById( id.Value );
+                    Entity = await service.ClienteGetById(id.Value);
                 }
                 return Page();
             }

@@ -24,7 +24,7 @@ namespace WebApp
 
         public async Task<IEnumerable<ClienteEntity>> ClienteGetLista()
         {
-            var result = await client.ServicioGetAsync<IEnumerable<ClienteEntity>>("api/Cliente");
+            var result = await client.ServicioGetAsync<IEnumerable<ClienteEntity>>("api/Cliente/Lista");
             return result;
         }
 
@@ -43,7 +43,7 @@ namespace WebApp
 
         public async Task<IEnumerable<ProductoEntity>> ProductoGetLista()
         {
-            var result = await client.ServicioGetAsync<IEnumerable<ProductoEntity>>("api/Producto");
+            var result = await client.ServicioGetAsync<IEnumerable<ProductoEntity>>("api/Producto/Lista");
             return result;
         }
 

@@ -84,5 +84,18 @@ namespace WebApiRest.Controllers
                 return new DBEntity { CodeError = ex.HResult, MsgError = ex.Message };
             }
         }
+
+        [HttpGet("Lista")]
+        public async Task<IEnumerable<ClienteEntity>> GetLista()
+        {
+            try
+            {
+                return await clienteService.GetLista();
+            }
+            catch (Exception ex)
+            {
+                return new List<ClienteEntity>();
+            }
+        }
     }
 }

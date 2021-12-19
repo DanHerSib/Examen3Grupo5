@@ -29,7 +29,7 @@ namespace WebApp.Pages.Producto
             {
                 if (id.HasValue)
                 {
-                    Entity = await service.ProductoGetById( id.Value );
+                    Entity = await service.ProductoGetById(id.Value);
                 }
                 return Page();
             }

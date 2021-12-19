@@ -41,12 +41,12 @@
                                 <td>@item.Cliente.NombreCompleto</td>
                                 <td>@item.Producto.ProductoId</td>
                                 <td>@item.Producto.Descripcion</td>
-                                <td>@item.FechaCompra</td>
+                                <td>@item.FechaCompra.ToString("dd/MM/yyyy")</td>
                                 <td>@item.Monto</td>
                                 <td>@item.Impuesto</td>
                                 <td>@item.Total</td>
                                 <td>@item.Observaciones</td>
-                                <td>@item.Estado</td>
+                                <td>@(item.Estado ? "Activo" : "Inactivo")</td>
                                 <td>
                                     <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdCompra"><i class='bx bx-edit-alt'></i></a>
 

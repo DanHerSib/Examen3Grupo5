@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using WBL;
 using Entity;
 
-namespace WebApp.Pages.Empleado
+namespace WebApp.Pages.Producto
 {
     public class GridModel : PageModel
     {
@@ -17,86 +17,19 @@ namespace WebApp.Pages.Empleado
         {
             this.service = service;
         }
-
-
-        //private readonly IEmpleadoService empleadoService;
-
-        //public GridModel(IEmpleadoService empleadoService)
-        //{
-        //    this.empleadoService = empleadoService;
-        //}
-
-
-        public IEnumerable<EmpleadoEntity> GridList { get; set; } = new List<EmpleadoEntity>();
-
+        public IEnumerable<ProductoEntity> GridList { get; set; } = new List<ProductoEntity>();
 
         public async Task<IActionResult> OnGet()
         {
-
             try
             {
-                GridList = await service.EmpleadoGet();                   
-
+                GridList = await service.ProductoGet();
                 return Page();
-
             }
             catch (Exception ex)
             {
-
                 return Content(ex.Message);
             }
-
         }
-        //public string Mensaje { get; set; } = "";
-        //public async Task<IActionResult> OnGet()
-        //{
-
-        //    try
-        //    {
-        //        GridList = await empleadoService.Get();
-
-        //        if (TempData.ContainsKey("Msg"))
-        //        {
-        //            Mensaje = TempData["Msg"] as string;
-        //        }
-
-        //        TempData.Clear();
-
-        //        return Page();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //       return Content(ex.Message) ;
-        //    }
-
-        //}
-
-        //public async Task<IActionResult> OnGetEliminar(int id)
-        //{
-
-        //    try
-        //    {
-        //        var result = await empleadoService.Delete( new() { IdEmpleado= id});
-
-        //        if (result.CodeError!=0)
-        //        {
-        //            throw new Exception(result.MsgError);
-        //        }
-
-        //        TempData["Msg"] = "Se elimino correctamente";
-
-        //        return Redirect("Grid");
-
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        return Content(ex.Message);
-        //    }
-
-        //}
     }
 }

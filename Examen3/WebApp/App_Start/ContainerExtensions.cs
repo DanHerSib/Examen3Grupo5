@@ -16,7 +16,6 @@ namespace WebApp
         {
 
             services.AddSingleton<IDataAccess, DataAccess>();
-            
             return services;
         }
     }

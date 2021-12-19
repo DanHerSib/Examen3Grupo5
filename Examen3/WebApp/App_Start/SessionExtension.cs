@@ -12,7 +12,7 @@ namespace WebApp
     public static class SessionExtension
     {
 
-        public static void Set<T>(this ISession session, string key, T value)
+      /*  public static void Set<T>(this ISession session, string key, T value)
         {
 
             session.SetString(key, JsonSerializer.Serialize(value));
@@ -38,7 +38,7 @@ namespace WebApp
                 return true;
             }           
         
-        }
+        }*/
 
     }
 }

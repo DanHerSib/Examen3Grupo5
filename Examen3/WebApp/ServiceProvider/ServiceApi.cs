@@ -22,6 +22,12 @@ namespace WebApp
             return result;
         }
 
+        public async Task<IEnumerable<ClienteEntity>> ClienteGetLista()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ClienteEntity>>("api/Cliente");
+            return result;
+        }
+
         public async Task<ClienteEntity> ClienteGetById(int id)
         {
             var result = await client.ServicioGetAsync<ClienteEntity>("api/Cliente/" + id);
@@ -30,6 +36,12 @@ namespace WebApp
         }
         //Producto
         public async Task<IEnumerable<ProductoEntity>> ProductoGet()
+        {
+            var result = await client.ServicioGetAsync<IEnumerable<ProductoEntity>>("api/Producto");
+            return result;
+        }
+
+        public async Task<IEnumerable<ProductoEntity>> ProductoGetLista()
         {
             var result = await client.ServicioGetAsync<IEnumerable<ProductoEntity>>("api/Producto");
             return result;

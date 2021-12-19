@@ -13,10 +13,10 @@ namespace WebApiRest.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly IClienteService ClienteService;
+        private readonly IClienteService clienteService;
         public ClienteController(IClienteService clienteService)
         {
-            this.ClienteService = clienteService;
+            this.clienteService = clienteService;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await ClienteService.Get();
+                return await clienteService.Get();
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await ClienteService.GetById(new ClienteEntity { ClienteId = id });
+                return await clienteService.GetById(new ClienteEntity { ClienteId = id });
             }
             catch (Exception ex)
             {
@@ -51,7 +51,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await ClienteService.Create(entity);
+                return await clienteService.Create(entity);
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await ClienteService.Update(entity);
+                return await clienteService.Update(entity);
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace WebApiRest.Controllers
         {
             try
             {
-                return await ClienteService.Delete(new ClienteEntity() { ClienteId = id });
+                return await clienteService.Delete(new ClienteEntity() { ClienteId = id });
             }
             catch (Exception ex)
             {

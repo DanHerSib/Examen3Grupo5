@@ -11,11 +11,9 @@ namespace WebApp.Pages
     public class IndexModel : PageModel
     {
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            if (!this.SessionOnline()) return RedirectToPage("Login");
-
-            return Page();
+           
         }
     }
 }
